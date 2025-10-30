@@ -26,12 +26,15 @@ O sistema tem como principal objetivo permitir que os alunos possam submeter seu
 ---
 
 ## 🧩 Casos de Uso
-![casosDeUso](https://github.com/user-attachments/assets/061afdea-739c-43ac-ae45-0a0b0c5260f8)
+![CasosDeUso](https://github.com/user-attachments/assets/58e151cd-0a1a-4d94-bcb9-ed045cfac0b7)
 
 ---
 ## 🗃️ Modelo Lógico 
 ![modeloLógico](https://github.com/user-attachments/assets/5a1dea41-1a0f-4ee0-8d50-55e7f3a22ede)
 
+---
+## Vídeo Descrição
+https://www.canva.com/design/DAG3S74UJl8/OXocvCIfzwssjjM_AWhSMw/watch?utm_content=DAG3S74UJl8&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h8f8d5035f2
 ---
 ## 📝 Observações
 
