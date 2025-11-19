@@ -16,7 +16,7 @@ public class Curso {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-
+    // teste
     private String nome;
     private String descricao;
 
