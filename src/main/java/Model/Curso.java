@@ -16,7 +16,7 @@ public class Curso {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-    // bom
+    // bom bril
     private String nome;
     private String descricao;
 
