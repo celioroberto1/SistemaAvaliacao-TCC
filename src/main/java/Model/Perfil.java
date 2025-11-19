@@ -3,26 +3,18 @@ package Model;
 import jakarta.persistence.*;
 import lombok.*;
 
-import java.time.LocalDate;
-
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
 @ToString
 @Entity
-public class Feedback {
+public class Perfil {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @Column(columnDefinition = "TEXT")
-    private String comentario;
-
-    private LocalDate dataEnvio;
-
-    @ManyToOne
-    @JoinColumn(name = "tcc_id")
-    private Tcc tcc;
+    private String nome; 
+    // Exemplo: "ALUNO", "PROFESSOR", "ORIENTADOR", "AVALIADOR", "COORDENADOR", "ADMIN"
 }

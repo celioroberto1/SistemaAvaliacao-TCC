@@ -1,14 +1,11 @@
 package Model;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
 
 import java.time.LocalDate;
 import java.util.List;
+
 @Getter
 @Setter
 @NoArgsConstructor
@@ -16,6 +13,7 @@ import java.util.List;
 @ToString
 @Entity
 public class Tcc {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
@@ -23,24 +21,27 @@ public class Tcc {
     private String titulo;
     private String resumo;
     private String status;
+
     private LocalDate dataSubmissao;
     private LocalDate dataDefesa;
 
-    @OneToOne
-    @JoinColumn(name = "id_aluno")
-    private Aluno aluno;
+    // Aluno é um usuário
+    @ManyToOne
+    @JoinColumn(name = "aluno_id")
+    private Usuario aluno;
 
     @ManyToOne
-    @JoinColumn(name = "id_curso")
+    @JoinColumn(name = "curso_id")
     private Curso curso;
 
-    @OneToOne
-    @JoinColumn(name = "id_banca")
-    private Banca banca;
-
+    // Orientador é um usuário com perfil PROFESSOR
     @ManyToOne
-    @JoinColumn(name = "fk_professor_id")
-    private Professor orientador;
+    @JoinColumn(name = "orientador_id")
+    private Usuario orientador;
+
+    // Pode haver várias bancas para um TCC
+    @OneToMany(mappedBy = "tcc")
+    private List<Banca> bancas;
 
     @OneToMany(mappedBy = "tcc")
     private List<Feedback> feedbacks;
@@ -48,5 +49,6 @@ public class Tcc {
     @OneToMany(mappedBy = "tcc")
     private List<VersaoTcc> versoes;
 
-    // Getters e setters
+    @OneToMany(mappedBy = "tcc")
+    private List<Prazo> prazos;
 }

@@ -1,13 +1,10 @@
 package Model;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
 
 import java.time.LocalDate;
+
 @Getter
 @Setter
 @NoArgsConstructor
@@ -15,6 +12,7 @@ import java.time.LocalDate;
 @ToString
 @Entity
 public class VersaoTcc {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
@@ -23,9 +21,6 @@ public class VersaoTcc {
     private LocalDate dataEnvio;
 
     @ManyToOne
-    @JoinColumn(name = "id_tcc")
+    @JoinColumn(name = "tcc_id")
     private Tcc tcc;
-
-    // Getters e setters
 }
-

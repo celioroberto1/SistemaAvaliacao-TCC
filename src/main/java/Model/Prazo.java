@@ -1,13 +1,10 @@
 package Model;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
 
 import java.time.LocalDate;
+
 @Getter
 @Setter
 @NoArgsConstructor
@@ -15,6 +12,7 @@ import java.time.LocalDate;
 @ToString
 @Entity
 public class Prazo {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
@@ -24,9 +22,15 @@ public class Prazo {
     private LocalDate dataFim;
 
     @ManyToOne
-    @JoinColumn(name = "id_coordenador")
-    private Professor coordenador;
+    @JoinColumn(name = "tcc_id")
+    private Tcc tcc;
 
-    // Getters e setters
+    @ManyToOne
+    @JoinColumn(name = "curso_id")
+    private Curso curso;
+
+    // Coordenador responsável pelo prazo
+    @ManyToOne
+    @JoinColumn(name = "coordenador_id")
+    private Usuario coordenador;
 }
-

@@ -1,13 +1,10 @@
 package Model;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
 
 import java.util.List;
+
 @Getter
 @Setter
 @NoArgsConstructor
@@ -15,6 +12,7 @@ import java.util.List;
 @ToString
 @Entity
 public class Curso {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
@@ -22,18 +20,17 @@ public class Curso {
     private String nome;
     private String descricao;
 
+    // Coordenador é um usuário com perfil COORDENADOR
     @ManyToOne
-    @JoinColumn(name = "id_coordenador")
-    private Professor coordenador;
+    @JoinColumn(name = "coordenador_id")
+    private Usuario coordenador;
 
-    @OneToMany(mappedBy = "curso")
-    private List<Aluno> alunos;
+    @ManyToMany(mappedBy = "cursos")
+    private List<Usuario> usuarios;
 
     @OneToMany(mappedBy = "curso")
     private List<Tcc> tccs;
 
     @OneToMany(mappedBy = "curso")
     private List<Prazo> prazos;
-
-    // Getters e setters
 }

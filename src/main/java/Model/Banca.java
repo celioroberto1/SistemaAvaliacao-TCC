@@ -1,14 +1,11 @@
 package Model;
 
-
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
 
 import java.time.LocalDate;
+import java.util.List;
+
 @Getter
 @Setter
 @NoArgsConstructor
@@ -16,6 +13,7 @@ import java.time.LocalDate;
 @ToString
 @Entity
 public class Banca {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
@@ -23,12 +21,16 @@ public class Banca {
     private LocalDate dataFormacao;
     private String status;
 
+    // Professores da banca: usuários com perfil AVALIADOR
+    @ManyToMany
+    @JoinTable(
+            name = "banca_professor",
+            joinColumns = @JoinColumn(name = "banca_id"),
+            inverseJoinColumns = @JoinColumn(name = "usuario_id")
+    )
+    private List<Usuario> avaliadores;
+
     @ManyToOne
-    @JoinColumn(name = "id_professor")
-    private Professor professor;
-
-    @OneToOne(mappedBy = "banca")
+    @JoinColumn(name = "tcc_id")
     private Tcc tcc;
-
-    // Getters e setters
 }
