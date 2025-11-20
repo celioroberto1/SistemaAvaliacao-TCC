@@ -2,15 +2,11 @@ package Model;
 
 import jakarta.persistence.*;
 import lombok.*;
-
 import java.time.LocalDate;
 import java.util.List;
 
-@Getter
-@Setter
-@NoArgsConstructor
-@AllArgsConstructor
-@ToString
+@Getter @Setter
+@NoArgsConstructor @AllArgsConstructor
 @Entity
 public class Tcc {
 
@@ -21,27 +17,20 @@ public class Tcc {
     private String titulo;
     private String resumo;
     private String status;
-
     private LocalDate dataSubmissao;
     private LocalDate dataDefesa;
 
-    // Aluno é um usuário
-    @ManyToOne
-    @JoinColumn(name = "aluno_id")
-    private Usuario aluno;
+    @OneToOne
+    @JoinColumn(name = "id_aluno")
+    private Aluno aluno;
 
     @ManyToOne
-    @JoinColumn(name = "curso_id")
+    @JoinColumn(name = "id_curso")
     private Curso curso;
 
-    // Orientador é um usuário com perfil PROFESSOR
     @ManyToOne
-    @JoinColumn(name = "orientador_id")
-    private Usuario orientador;
-
-    // Pode haver várias bancas para um TCC
-    @OneToMany(mappedBy = "tcc")
-    private List<Banca> bancas;
+    @JoinColumn(name = "id_orientador")
+    private Orientador orientador;
 
     @OneToMany(mappedBy = "tcc")
     private List<Feedback> feedbacks;
@@ -50,5 +39,5 @@ public class Tcc {
     private List<VersaoTcc> versoes;
 
     @OneToMany(mappedBy = "tcc")
-    private List<Prazo> prazos;
+    private List<Avaliacao> avaliacoes;
 }

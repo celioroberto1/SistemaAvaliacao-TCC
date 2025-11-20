@@ -2,14 +2,10 @@ package Model;
 
 import jakarta.persistence.*;
 import lombok.*;
-
 import java.time.LocalDate;
 
-@Getter
-@Setter
-@NoArgsConstructor
-@AllArgsConstructor
-@ToString
+@Getter @Setter
+@NoArgsConstructor @AllArgsConstructor
 @Entity
 public class Feedback {
 
@@ -23,6 +19,6 @@ public class Feedback {
     private LocalDate dataEnvio;
 
     @ManyToOne
-    @JoinColumn(name = "tcc_id")
+    @JoinColumn(name = "id_tcc")
     private Tcc tcc;
 }
