@@ -30,7 +30,7 @@ O sistema tem como principal objetivo permitir que os alunos possam submeter seu
 
 ---
 ## 🗃️ Modelo Lógico 
-![modeloLógico](https://github.com/user-attachments/assets/5a1dea41-1a0f-4ee0-8d50-55e7f3a22ede)
+<img width="1145" height="839" alt="Untitled" src="https://github.com/user-attachments/assets/21b32243-475e-4da7-8679-9cc88482d2f6" />
 
 ---
 ## Vídeo Descrição
