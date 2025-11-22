@@ -30,4 +30,9 @@ public class Curso {
 
     @OneToMany(mappedBy = "curso")
     private List<Banca> bancas;
+
+    public Curso(Long id) {
+        this.id = id;
+    }
+
 }

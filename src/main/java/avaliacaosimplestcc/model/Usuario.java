@@ -54,4 +54,11 @@ public class Usuario {
 
     @OneToMany(mappedBy = "avaliador")
     private List<TCC> tccsComoAvaliador;
+
+    public Usuario(Long id) {
+        this.id = id;
+    }
+
+
+
 }
