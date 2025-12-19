@@ -38,7 +38,8 @@ https://www.canva.com/design/DAG3S74UJl8/OXocvCIfzwssjjM_AWhSMw/watch?utm_conten
 ---
 # Vídeo Demonstrativo dos Cruds Iniciais
 
-https://www.canva.com/design/DAG5d4iki8o/tE_cn1dcENNeKNYb-4ludg/watch?utm_content=DAG5d4iki8o&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=hdf8fbd9f21
+https://www.canva.com/design/DAG5d4iki8o/mWtoNlRGW8TK_IYFlLJkGQ/edit?utm_content=DAG5d4iki8o&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton
+
 ## 📝 Observações
 -  As atualizações dos Cruds ainda não estão na branch principal e ficaram na branch testes.
 - O sistema contempla o fluxo completo do TCC, desde a submissão inicial até a defesa final.
